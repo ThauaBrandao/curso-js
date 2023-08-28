@@ -8,6 +8,7 @@
         body {
             background-color: rgb(62, 110, 122);
             color: white;
+            font: normal 16px arial;
         }
     </style>
 </head>
@@ -16,14 +17,28 @@
     <h1>Iniciando estudos com DOM</h1>
     <p>Aqui vai o resultado</p>
     <p>Aprendendo a usar o <strong>DOM</strong> em JavaScript</p>
-    <div class="ex1">Clique em mim</div>
+    <h2 name="ex2">Exemplo</h2>
+    <div id="ex1">Clique em mim</div>
 
     <script>
+
+        // criando variavel com uma tag
+        //mudando a cor do elemento
         let p1 = window.document.getElementsByTagName('p')[1]
+        p1.style.color = 'white'
+
+ 
         let corpo = window.document.body
 
-        let exemplo = window.document.querySelector('div.ex1')
-        exemplo.style.color = 'blue'
+        // criando variável com ID
+        // mudando a cor do elemento
+        let exemplo = window.document.getElementById('ex1')
+        exemplo.style.color = 'black'
+
+        //Criando uma váriavel com o Nome
+        //Mudando o texto com o comando innerText
+        let st = window.document.getElementsByName('ex2')[0]
+        st.innerText = 'Mudei com innerText'
     </script>
 </body>
 </html>
