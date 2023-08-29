@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estrangeiro ou não?</title>
+</head>
+<body>
+    <h1>Sistema de país</h1>
+
+    <div><label for="txtpais">De que país você é?</label></div>
+    <input type="text" id="txtpais">
+    <input type="button" value="Enviar" onclick="calcular()">
+
+    <div id="res"></div>
+
+<script>
+    let pais = window.document.querySelector('input#txtpais')
+    let resultado = window.document.getElementById('res')
+    var p = String(pais)
+
+    
+
+    function calcular() {
+        resultado.innerHTML = `<p>Você vive em ${pais.value}!</p>`
+        if (pais.value == 'Brasil') {
+            resultado.innerHTML += `Você é Brasileiro!`
+        } else {
+            resultado.innerHTML += `Você é estrangeiro!`
+        }
+    }
+</script>
+
+</body>
+</html>
