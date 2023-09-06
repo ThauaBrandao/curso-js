@@ -2,12 +2,12 @@
 
 function calcular006() {
     let numero006 = document.querySelector("#numero006")
-    let resultado006 = document.getElementById('resultado006')
+    let res006 = document.getElementById('resultado006')
     let dobro006 = Number(numero006.value) * 2
     let triplo006 = Number(numero006.value) * 3
     let rq006 = Number(numero006.value) * Number(numero006.value) 
 
-    resultado006.innerHTML = `O dobro de ${Number(numero006.value)} é ${dobro006} <br> O triplo de ${Number(numero006.value)} é ${triplo006} <br> A raiz quadrada de ${Number(numero006.value)} é ${rq006}`
+    res006.innerHTML = `O dobro de ${Number(numero006.value)} é <strong>${dobro006}</strong> <br> O triplo de ${Number(numero006.value)} é <strong>${triplo006}</strong> <br> A raiz quadrada de ${Number(numero006.value)} é <strong>${rq006}</strong>`
 }
 
 //EXERCICIO 007
@@ -19,8 +19,60 @@ function calcular007() {
     let media = (Number(nota1.value) + Number(nota2.value)) / 2
 
     if (Number(nota1.value) > 10 || Number(nota2.value) > 10) {
-        res.innerHTML = `A nota máxima é 10, calcule novamente!`
+        res.innerHTML = `A nota máxima é <strong>10</strong>, calcule novamente!`
     } else {
-        res.innerHTML = `A sua média é ${media}`
+        res.innerHTML = `A sua média é <strong>${media}</strong>`
     }
+}
+
+//EXERCICIO 008
+
+function calcular008() {
+    let valor1 = document.getElementById('numero008')
+    let res008 = document.getElementById('resultado008')
+    let km = Number(valor1.value) / 1000
+    let hm = Number(valor1.value) / 100
+    let dam = Number(valor1.value) / 10
+    let dm = Number(valor1.value) * 10
+    let cm = Number(valor1.value) * 100
+    let mm = Number(valor1.value) * 1000
+    res008.innerHTML = `A medida de ${Number(valor1.value)}m corresponde a <strong>${km}km</strong> <br> A medida de ${Number(valor1.value)}m corresponde a <strong>${hm}hm</strong> <br> A medida de ${Number(valor1.value)}m corresponde a <strong>${dam}dam</strong> <br> A medida de ${Number(valor1.value)}m corresponde a <strong>${dm}dm</strong> <br> A medida de ${Number(valor1.value)}m corresponde a <strong>${cm}cm</strong> <br> A medida de ${Number(valor1.value)}m corresponde a <strong>${mm}mm</strong> <br> `
+}
+
+//EXERCICIO 009
+
+function calcular009() {
+    let valor1 = document.getElementById('numero009')
+    let res009 = document.getElementById('resultado009')
+    res009.innerHTML = ``
+    for (let i= 1; i < 11; i++) {
+        let mult009 = Number(valor1.value) * i
+        res009.innerHTML += `${i} x ${Number(valor1.value)} = <strong>${mult009}</strong> | `
+        if (i == 2 || i == 4 || i == 6 || i == 8 || i == 10 ) {
+            res009.innerHTML += `<br> `
+        }
+
+    }
+}
+
+//EXERCICIO 010
+
+function calcular010() {
+    let valor1 = document.getElementById('numero010')
+    let moeda = document.getElementsByName('moeda')
+    let dolar = Number(valor1.value) / 4.97
+    let euro = Number(valor1.value) / 5.33
+    let libra = Number(valor1.value) / 6.24
+    let bitcoin = Number(valor1.value) / 128225.76
+    let res010 = document.getElementById('resultado010')
+    if (moeda[0].checked) {
+        res010.innerHTML = `A quantidade de dinheiro que você tem em <strong>Dólar</strong> é de: <strong>${dolar.toFixed(2)}$</strong>`
+    } else if (moeda[1].checked) {
+        res010.innerHTML = `A quantidade de dinheiro que você tem em <strong>Euro</strong> é de: <strong>${euro.toFixed(2)}€</strong>`
+    } else if (moeda[2].checked) {
+        res010.innerHTML = `A quantidade de dinheiro que você tem em <strong>Libra</strong> é de: <strong>${libra.toFixed(2)}£</strong>`
+    } else {
+        res010.innerHTML = `A quantidade de dinheiro que você tem em <strong>Bitcoin</strong> é de: <strong>${bitcoin.toFixed(5)}BTC</strong>`
+    }
+    
 }
