@@ -76,3 +76,26 @@ function calcular010() {
     }
     
 }
+
+//EXERCICIO 11
+
+function calcular011() {
+    let largura = document.getElementById('numeroum011')
+    let altura = document.getElementById('numerodois011')
+    let res011 = document.getElementById('resultado011')
+    let area = Number(largura.value) * Number(altura.value)
+    
+        res011.innerHTML += `Sua parede tem a dimensão de ${Number(largura.value)}x${Number(altura.value)} e sua área é de ${area}m² <br>`
+        res011.innerHTML += `Para pintar essa parede, você precisará de ${area / 2}l de tinta`
+    
+}
+
+//EXERCICIO 12
+
+function calcular012() {
+    let produto012 = document.getElementById('numero012')
+    let res012 = document.getElementById('resultado012')
+    let desconto012 = Number(produto012.value) * (5 / 100)
+    let total12 = Number(produto012.value) - Number(desconto12.value)
+    res012.innerHTML = `O produto que custava R$${Number(produto012.value)}, na promoção com desconto de 5% vai custar R$${total12}`
+}
